@@ -85,7 +85,13 @@ if (document.body.dataset.page === 'products') {
       card.hidden = !availablePlans.has(card.querySelector('[data-plan]').dataset.plan) || (breakfastFilter.checked && Number(card.dataset.breakfast) === 0) || (instantFilter.checked && card.dataset.instant !== 'true');
       if (!card.hidden) visible++;
     });
-    document.querySelectorAll('.bp-rate-group').forEach(group => { group.hidden = ![...group.querySelectorAll('.bp-rate-card')].some(card => !card.hidden); group.classList.toggle('is-filtered', filtered); });
+    document.querySelectorAll('.bp-rate-group').forEach(group => {
+      const visibleCards = [...group.querySelectorAll('.bp-rate-card')].filter(card => !card.hidden);
+      group.hidden = visibleCards.length === 0;
+      group.classList.toggle('is-filtered', filtered);
+      const divider = group.querySelector('.bp-rate-row-divider');
+      if (divider) divider.hidden = filtered || visibleCards.length < 3;
+    });
     document.querySelectorAll('.bp-rate-empty').forEach(item => item.hidden = filtered);
     showStatus(visible ? '' : '暂无符合筛选条件的产品，请调整筛选后重试。');
     return visible;

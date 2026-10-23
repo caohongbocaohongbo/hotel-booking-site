@@ -37,7 +37,7 @@ export function setupSearch(form){
       requestAnimationFrame(()=>location.assign(target.href));
       return;
     }
-    location.href=`products.html?${params}`;
+    location.href=`${document.body.classList.contains('home-page')?'rooms.html':'products.html'}?${params}`;
   });
 }
 for(const form of document.querySelectorAll('[data-search-form]')){setupSearch(form);attachDateRange({startInput:form.elements.checkin,endInput:form.elements.checkout,triggers:[form.elements.checkin,form.elements.checkout],anchor:form,label:'选择入住和离店日期',minNights:1,maxNights:30});}
