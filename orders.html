@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><link rel="icon" href="assets/favicon.svg?v=4" type="image/svg+xml">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="查看及管理酒店预订订单。">
+  <title>订单管理 · 酒店预订</title>
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/orders.css">
+  <script type="module" src="js/common.js"></script>
+  <script type="module" src="js/orders.js"></script>
+</head>
+<body class="orders-page">
+  <aside class="site-sidebar" data-sidebar="orders"></aside>
+  <main class="orders-main">
+    <nav class="orders-topnav" aria-label="账户管理">
+      <a class="orders-topnav-active" href="orders.html" aria-current="page">订单管理<img src="assets/orders/82ae8.svg" alt=""></a>
+      <button type="button" data-account-panel="bill">账单管理</button>
+      <button type="button" data-account-panel="finance">财务管理</button>
+    </nav>
+    <section class="orders-content" aria-label="订单列表">
+      <div class="orders-toolbar">
+        <div class="orders-tabs" role="tablist" aria-label="订单状态">
+          <button type="button" class="is-active" role="tab" aria-selected="true" data-order-tab="all">所有订单</button>
+          <button type="button" role="tab" aria-selected="false" data-order-tab="待付款">待付款</button>
+          <button type="button" role="tab" aria-selected="false" data-order-tab="待确认">待确认</button>
+        </div>
+        <button type="button" class="orders-button orders-export" id="orders-export"><img src="assets/orders/80221.svg" alt="">导出列表</button>
+      </div>
+      <form class="orders-filters" id="orders-search">
+        <label class="orders-field"><span>订单号</span><input type="search" name="order" placeholder="请输入订单号" autocomplete="off"></label>
+        <label class="orders-field"><span>客人姓名</span><input type="search" name="guest" placeholder="请输入客人姓名" autocomplete="off"></label>
+        <div class="orders-field orders-date-field">
+          <span id="orders-date-label">日期范围</span>
+          <div class="orders-date-control">
+            <div class="orders-date-type">
+              <button type="button" id="orders-date-type" aria-expanded="true" aria-controls="orders-date-options"><span>下单日期</span><img src="assets/orders/77fb8.svg" alt=""></button>
+              <div class="orders-date-options" id="orders-date-options" role="listbox" aria-label="日期类型">
+                <button type="button" role="option" aria-selected="true" data-date-type="created">下单日期</button>
+                <button type="button" role="option" aria-selected="false" data-date-type="checkin">入住日期</button>
+                <button type="button" role="option" aria-selected="false" data-date-type="checkout">离店日期</button>
+              </div>
+            </div>
+            <button type="button" class="orders-date-range" id="orders-date-range" aria-expanded="false" aria-label="选择订单日期范围"><img src="assets/orders/70c80.svg" alt=""><span id="orders-range-start">开始日期</span><span class="orders-date-dash">—</span><span id="orders-range-end">结束日期</span></button>
+            <input type="hidden" name="start" value="">
+            <input type="hidden" name="end" value="">
+          </div>
+        </div>
+        <button type="submit" class="orders-search-button">搜索</button>
+        <button type="reset" class="orders-reset">重置</button>
+      </form>
+      <div class="orders-cards" id="orders-cards" aria-live="polite"></div>
+      <div class="orders-empty" id="orders-empty" hidden><h2>暂无符合条件的订单</h2><p>试试其他订单号、客人姓名或日期范围。</p><button class="orders-button" type="button" id="orders-clear-search">清除筛选</button></div>
+      <nav class="orders-pagination" id="orders-pagination" aria-label="订单分页" hidden><span id="orders-page-info"></span><button type="button" class="orders-button" id="orders-prev">上一页</button><span id="orders-page-number"></span><button type="button" class="orders-button" id="orders-next">下一页</button></nav>
+    </section>
+  </main>
+  <dialog class="orders-dialog" id="orders-dialog" aria-labelledby="orders-dialog-title"><form method="dialog" class="orders-dialog-heading"><h2 id="orders-dialog-title"></h2><button type="submit" aria-label="关闭弹窗">×</button></form><div id="orders-dialog-content"></div></dialog>
+</body>
+</html>

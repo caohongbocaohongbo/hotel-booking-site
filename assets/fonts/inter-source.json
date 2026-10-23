@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Inter-Italic[opsz,wght].ttf",
+    "size": 906596,
+    "sha": "c177578428248f08eedcc60e292acc6f414c2167",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter-Italic%5Bopsz%2Cwght%5D.ttf"
+  },
+  {
+    "name": "Inter[opsz,wght].ttf",
+    "size": 876576,
+    "sha": "047c92f6e2212473dc436020afed689527076d44",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/Inter%5Bopsz%2Cwght%5D.ttf"
+  },
+  {
+    "name": "OFL.txt",
+    "size": 4377,
+    "sha": "21f6aff961064c2e429f570995e446bcdd555422",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt"
+  }
+]

@@ -1,0 +1,80 @@
+[
+  {
+    "name": "IntelOneMono-Bold.ttf",
+    "size": 124452,
+    "sha": "f951e6e18cc99952d20f87ec876899b4e6083a81",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-Bold.ttf"
+  },
+  {
+    "name": "IntelOneMono-BoldItalic.ttf",
+    "size": 127580,
+    "sha": "afb4cce2c1ec122821a7dce370ad227eae6d2c6e",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-BoldItalic.ttf"
+  },
+  {
+    "name": "IntelOneMono-Italic.ttf",
+    "size": 127888,
+    "sha": "c62591b61a0c04a21313bce429609a441d184981",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-Italic.ttf"
+  },
+  {
+    "name": "IntelOneMono-Italic[wght].ttf",
+    "size": 156828,
+    "sha": "5304424e3aa2f6819c64f32650b558cb597aab51",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-Italic%5Bwght%5D.ttf"
+  },
+  {
+    "name": "IntelOneMono-Light.ttf",
+    "size": 125456,
+    "sha": "b4c661358b2b93e071ad164e5198682f28b28ecc",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-Light.ttf"
+  },
+  {
+    "name": "IntelOneMono-LightItalic.ttf",
+    "size": 128636,
+    "sha": "fd638deb6c82f246727d69c7971aa2778310dc5a",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-LightItalic.ttf"
+  },
+  {
+    "name": "IntelOneMono-Medium.ttf",
+    "size": 124548,
+    "sha": "a7073c2de707b7d9a955f6cb55ef3f5d85b8c9b0",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-Medium.ttf"
+  },
+  {
+    "name": "IntelOneMono-MediumItalic.ttf",
+    "size": 127496,
+    "sha": "3e46c31ac51aebbb46deb6ecb28cc332c9e5d6cb",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-MediumItalic.ttf"
+  },
+  {
+    "name": "IntelOneMono-Regular.ttf",
+    "size": 125144,
+    "sha": "f06c22383054f3e4f0bdc5d3984811b85f9da2f4",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-Regular.ttf"
+  },
+  {
+    "name": "IntelOneMono-SemiBold.ttf",
+    "size": 155860,
+    "sha": "a7147c360278c84f5d1be55d2e6859689576e109",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-SemiBold.ttf"
+  },
+  {
+    "name": "IntelOneMono-SemiBoldItalic.ttf",
+    "size": 149116,
+    "sha": "6c77103d8a102d9bbab644c736bbb2daf146f28d",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono-SemiBoldItalic.ttf"
+  },
+  {
+    "name": "IntelOneMono[wght].ttf",
+    "size": 151540,
+    "sha": "b8a0938d2b44e95fc903b2ad72c1a8d0467e0e27",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/IntelOneMono%5Bwght%5D.ttf"
+  },
+  {
+    "name": "OFL.txt",
+    "size": 4440,
+    "sha": "ff8ab5543f63066e427b4d0d2e317fe3d00a6738",
+    "download_url": "https://raw.githubusercontent.com/google/fonts/main/ofl/intelonemono/OFL.txt"
+  }
+]

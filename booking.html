@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><link rel="icon" href="assets/favicon.svg?v=4" type="image/svg+xml">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>填写预订 · STILL HOTEL</title>
+  <link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/booking.css">
+  <script type="module" src="js/common.js"></script><script type="module" src="js/booking.js"></script>
+</head>
+<body class="bp-page bp-booking" data-page="booking">
+  <div class="bp-booking-backdrop" aria-hidden="true"><div class="bp-backdrop-nav">酒店</div><div class="bp-backdrop-photo"></div><div class="bp-backdrop-title"><small>BOOKING ROOMS</small><strong>预订房间</strong></div></div>
+  <header class="bp-flow-header"><a class="bp-header-back" href="products.html" aria-label="返回选择产品">←</a><nav class="bp-steps" aria-label="预订流程"><a href="products.html">01. 客房</a><span class="is-current" aria-current="step">02. 住客详情</span><span>03. 确认</span></nav><a class="bp-close" href="products.html" aria-label="关闭预订表单">X</a></header>
+  <main class="bp-booking-content">
+    <form id="booking-form" class="bp-booking-form" novalidate>
+      <div class="bp-selection-summary"><img src="assets/booking/69c30.png" alt="所选客房"><div><p>深圳喜马拉雅酒店</p><h1 id="selected-room">静岚套房 - 无早</h1></div></div>
+      <section class="bp-form-panel" aria-labelledby="guest-heading">
+        <div class="bp-panel-heading"><h2 id="guest-heading">住客详情</h2><p><b>*</b> 必填</p></div>
+        <div class="bp-form-row bp-stay-row"><span class="bp-form-label">入住日期</span><strong id="stay-dates">2026-10-21（周三）至 2026-10-22（周四）</strong><span id="stay-nights">共 1 晚</span></div>
+        <div class="bp-form-row"><label class="bp-form-label" for="room-count">房间数量 <b>*</b></label><select id="room-count" name="rooms"><option value="1">1 间</option><option value="2">2 间</option><option value="3">3 间</option><option value="4">4 间</option><option value="5">5 间</option></select><span class="bp-minimum-note">该产品至少需要预订 1 间</span></div>
+        <div class="bp-form-row bp-name-hint"><span class="bp-form-label">客人姓名 <b>*</b></span><p>请填写实际入住人姓名，英文姓名格式为 ZHANG/SAN，须与入住证件姓名保持一致</p></div>
+        <div class="bp-name-mode"><span class="bp-check-icon" aria-hidden="true">✓</span>输入所有客人姓名</div>
+        <div id="guest-rooms" class="bp-guest-rooms">
+          <div class="bp-guest-room" data-room="1"><div class="bp-guest-row"><strong>房间 1</strong><input name="guest1" required maxlength="60" placeholder="客人姓名1（必填）" aria-label="房间1客人姓名1" autocomplete="name"><input name="identity1" maxlength="30" placeholder="客人姓名1身份证（选填）" aria-label="房间1客人1身份证"></div><div class="bp-guest-row"><span></span><input name="guest2" maxlength="60" placeholder="客人姓名2（选填）" aria-label="房间1客人姓名2"><input name="identity2" maxlength="30" placeholder="客人姓名2身份证（选填）" aria-label="房间1客人2身份证"></div><button type="button" class="bp-add-guest">＋ 添加入住人</button></div>
+        </div>
+      </section>
+      <section class="bp-form-panel bp-needs-panel" aria-labelledby="needs-heading">
+        <div class="bp-panel-heading"><h2 id="needs-heading">其他需求</h2></div>
+        <div class="bp-form-row"><label class="bp-form-label" for="arrival-time">到店时间</label><select id="arrival-time" name="arrival"><option>14:00-17:00</option><option>17:00-20:00</option><option>20:00-23:00</option><option>23:00 以后</option></select></div>
+        <div class="bp-form-row"><label class="bp-form-label" for="company-order">贵司单号</label><input id="company-order" name="companyOrder" placeholder="请输入贵司单号" maxlength="40"></div>
+        <div class="bp-form-row"><span class="bp-form-label" id="confirmation-label">确认方式</span><div class="bp-radio-options" role="radiogroup" aria-labelledby="confirmation-label"><label><input type="radio" name="confirmation" value="online" checked>在线确认</label><label><input type="radio" name="confirmation" value="sms">短信确认</label><label><input type="radio" name="confirmation" value="fax">传真确认</label></div></div>
+        <div class="bp-form-row"><label class="bp-form-label" for="special-needs">特殊需求</label><button class="bp-switch" id="special-needs" type="button" role="switch" aria-checked="true" aria-controls="special-options" aria-label="启用特殊需求"><span></span></button></div>
+        <div id="special-options" class="bp-special-options"><div class="bp-preferences"><label><input type="checkbox" name="preferences" value="大床">尽量安排大床</label><label><input type="checkbox" name="preferences" value="安静房">尽量安排安静房</label><label><input type="checkbox" name="preferences" value="高楼层">尽量安排高楼层</label><label><input type="checkbox" name="preferences" value="相邻">尽量安排相邻</label><label><input type="checkbox" name="preferences" value="双床">尽量安排双床</label><label><input type="checkbox" name="preferences" value="无烟房">尽量安排无烟房</label></div><div class="bp-remarks-wrap"><textarea name="remarks" id="remarks" maxlength="100" placeholder="请输入备注内容" aria-label="备注内容"></textarea><span id="remarks-count">100 / 100</span></div></div>
+      </section>
+      <section class="bp-form-panel bp-contact-panel" aria-labelledby="contact-heading"><div class="bp-panel-heading"><h2 id="contact-heading">联系信息</h2></div><div class="bp-form-row"><label class="bp-form-label" for="contact-name">联系人姓名 <b>*</b></label><input id="contact-name" name="contactName" value="cecilia" required autocomplete="name" maxlength="60"></div><div class="bp-form-row"><label class="bp-form-label" for="contact-phone">联系人手机 <b>*</b></label><input id="contact-phone" name="phone" type="tel" value="136 1282 6850" required autocomplete="tel" maxlength="24"></div><div class="bp-form-row"><label class="bp-form-label" for="contact-email">邮箱地址</label><input id="contact-email" name="email" type="email" placeholder="请输入邮箱地址" autocomplete="email" maxlength="100"></div></section>
+      <section class="bp-form-panel bp-policy-panel" aria-labelledby="policy-heading"><div class="bp-panel-heading"><h2 id="policy-heading">预订须知</h2></div><div class="bp-form-row"><span class="bp-form-label">取消政策</span><p>一经预订不可取消</p></div><div class="bp-policy-agreement"><label><input type="checkbox" name="agreement" required>我已阅读并同意以上预订须知</label></div></section>
+      <p class="bp-validation-message" id="booking-validation" role="alert" hidden></p>
+    </form>
+    <aside class="bp-fee-summary" aria-labelledby="fee-heading"><h2 id="fee-heading">费用明细</h2><div class="bp-fee-section"><h3>房费</h3><div id="nightly-fees" class="bp-fee-lines"><p><span>2026-10-21 · 无早</span><strong>¥ 2,280 × 1</strong></p></div><p class="bp-fee-subtotal"><span>小计</span><strong id="room-subtotal">¥ 2,280.00</strong></p></div><div class="bp-fee-section"><h3>其它</h3><div class="bp-fee-lines"><p><span>服务费</span><strong>¥ 0</strong></p><p><span>附加项费用</span><strong>¥ 0</strong></p></div><p class="bp-fee-subtotal"><span>小计</span><strong>¥ 0.00</strong></p></div><div class="bp-fee-spacer"></div><div class="bp-total"><span>总计（含税价）</span><strong id="booking-total">¥ 2,280</strong></div><button type="submit" form="booking-form" class="bp-submit" id="booking-submit">确认提交</button></aside>
+  </main>
+  <dialog class="bp-confirmation-dialog" id="booking-confirmation" aria-labelledby="confirmation-heading"><div class="bp-confirmation-mark" aria-hidden="true">✓</div><h2 id="confirmation-heading">预订已提交</h2><p>您的预订信息已保存，请在订单中查看详情。</p><p class="bp-confirmation-number" id="confirmation-number"></p><a class="bp-submit" href="orders.html">查看我的订单</a><button type="button" id="confirmation-close">返回酒店</button></dialog>
+</body>
+</html>

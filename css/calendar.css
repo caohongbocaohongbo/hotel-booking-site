@@ -1,0 +1,387 @@
+/* 共用日期选择器：沿用原稿字体、黑白配色与 630px 双月布局。 */
+.hotel-calendar {
+  --calendar-day-size: 32px;
+  --calendar-column-gap: 8.5px;
+  --calendar-ink: #313333;
+  --calendar-muted: #949999;
+  position: fixed;
+  z-index: 320;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 630px;
+  max-width: calc(100vw - 32px);
+  max-height: calc(100vh - 32px);
+  max-height: calc(100dvh - 32px);
+  margin: 0;
+  padding: 15px;
+  overflow: auto;
+  border: 1px solid #d8dbdb;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--calendar-ink);
+  box-shadow: 0 16px 48px #00000012;
+  font: 400 14px/22px 'Noto Sans SC', sans-serif;
+  letter-spacing: 0;
+  text-align: left;
+  -webkit-text-size-adjust: 100%;
+}
+
+.hotel-calendar,
+.hotel-calendar * {
+  box-sizing: border-box;
+}
+
+.hotel-calendar[data-mode='single'] {
+  width: 307px;
+}
+
+.hotel-calendar .calendar-body {
+  display: flex;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  min-width: 0;
+}
+
+.hotel-calendar[data-mode='single'] .calendar-body {
+  display: block;
+}
+
+.hotel-calendar .calendar-month {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.hotel-calendar .calendar-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 24px;
+  min-height: 24px;
+}
+
+.hotel-calendar .calendar-header h2 {
+  flex: none;
+  margin: 0;
+  padding: 0;
+  color: var(--calendar-ink);
+  font: 500 16px/24px 'Noto Sans SC', sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.hotel-calendar button {
+  appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--calendar-ink);
+  cursor: pointer;
+  text-align: center;
+  text-transform: none;
+  letter-spacing: 0;
+  filter: none;
+  box-shadow: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: background-color 160ms ease, color 160ms ease,
+    border-color 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+.hotel-calendar button[class]:focus-visible {
+  outline: 2px solid #313333;
+  outline-offset: 3px;
+}
+
+.hotel-calendar button[class]:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+  transform: none;
+}
+
+.hotel-calendar .calendar-header button,
+.hotel-calendar .calendar-nav-spacer {
+  display: flex;
+  flex: 0 0 24px;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  min-height: 24px;
+  padding: 0;
+  border: 0;
+  border-radius: 4px;
+  font: 400 14px/22px 'Noto Sans SC', sans-serif;
+}
+
+.hotel-calendar .calendar-header button img,
+.hotel-calendar .calendar-nav-spacer img,
+.hotel-calendar .calendar-confirm img {
+  display: block;
+  flex: 0 0 24px;
+  width: 24px;
+  max-width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.hotel-calendar .calendar-prev img {
+  transform: rotate(180deg);
+}
+
+.hotel-calendar .calendar-nav-spacer {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.hotel-calendar .calendar-header button:not(:disabled):hover {
+  background: #f3f4f2;
+  filter: none;
+}
+
+.hotel-calendar .calendar-header button:not(:disabled):active {
+  transform: scale(.92);
+}
+
+.hotel-calendar .calendar-header button:disabled img {
+  opacity: .35;
+}
+
+.hotel-calendar .calendar-weekdays,
+.hotel-calendar .calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, var(--calendar-day-size));
+  justify-content: space-between;
+  column-gap: var(--calendar-column-gap);
+  width: 100%;
+  min-width: 0;
+}
+
+.hotel-calendar .calendar-weekdays {
+  height: 22px;
+  color: var(--calendar-muted);
+  font: 400 14px/22px 'Noto Sans SC', sans-serif;
+  text-align: center;
+}
+
+.hotel-calendar .calendar-weekdays span {
+  display: block;
+  min-width: 0;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+}
+
+.hotel-calendar .calendar-grid {
+  isolation: isolate;
+  row-gap: 8px;
+}
+
+.hotel-calendar .calendar-cell {
+  position: relative;
+  width: var(--calendar-day-size);
+  min-width: 0;
+  height: var(--calendar-day-size);
+}
+
+/* 连接相邻日期的中心点；星期六在此截断，下一行重新形成圆角端点。 */
+.hotel-calendar .calendar-cell.has-next-selected:not(.week-end)::before {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 50%;
+  width: calc(100% + var(--calendar-column-gap));
+  height: var(--calendar-day-size);
+  background: #000;
+  content: '';
+  pointer-events: none;
+}
+
+.hotel-calendar .calendar-day {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--calendar-day-size);
+  min-width: 0;
+  max-width: 100%;
+  height: var(--calendar-day-size);
+  min-height: var(--calendar-day-size);
+  margin: 0 auto;
+  padding: 0;
+  border: 0;
+  border-radius: 16px;
+  background: transparent;
+  color: var(--calendar-ink);
+  font: 400 14px/22px 'Noto Sans SC', sans-serif;
+  white-space: nowrap;
+}
+
+.hotel-calendar .calendar-day-number {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  line-height: 22px;
+  pointer-events: none;
+}
+
+.hotel-calendar .calendar-cell.is-outside .calendar-day,
+.hotel-calendar .calendar-day:disabled {
+  color: var(--calendar-muted);
+}
+
+.hotel-calendar .calendar-day:not(:disabled):hover {
+  background: #f3f4f2;
+  filter: none;
+}
+
+.hotel-calendar .calendar-day:not(:disabled):active {
+  transform: scale(.94);
+}
+
+.hotel-calendar .calendar-cell.is-start .calendar-day,
+.hotel-calendar .calendar-cell.is-end .calendar-day,
+.hotel-calendar .calendar-cell.is-selected .calendar-day,
+.hotel-calendar .calendar-cell.is-between .calendar-day,
+.hotel-calendar .calendar-cell.is-range-preview .calendar-day,
+.hotel-calendar .calendar-day[aria-selected='true'] {
+  background: #000;
+  color: #fff;
+}
+
+.hotel-calendar .calendar-footer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 0;
+}
+
+.hotel-calendar[data-mode='single'] .calendar-footer {
+  display: none;
+}
+
+.hotel-calendar .calendar-confirm {
+  display: inline-flex;
+  flex: 0 0 90px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 90px;
+  min-width: 90px;
+  height: 50px;
+  min-height: 50px;
+  margin: 0;
+  padding: 12px;
+  border: 1px solid #d8dbdb;
+  border-radius: 8px;
+  background: #fff;
+  color: var(--calendar-ink);
+  font: 500 16px/24px 'Noto Sans SC', sans-serif;
+  white-space: nowrap;
+}
+
+.hotel-calendar .calendar-confirm span {
+  display: block;
+  flex: 0 0 32px;
+  width: 32px;
+  font: inherit;
+  line-height: 24px;
+}
+
+.hotel-calendar .calendar-confirm:not(:disabled):hover {
+  border-color: #949999;
+  background: #fcfcfa;
+  filter: none;
+}
+
+.hotel-calendar .calendar-confirm:not(:disabled):active {
+  transform: translateY(1px);
+}
+
+.hotel-calendar .calendar-confirm:disabled {
+  color: var(--calendar-muted);
+}
+
+.hotel-calendar .calendar-confirm:disabled img {
+  opacity: .35;
+}
+
+.hotel-calendar .calendar-status.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (max-width: 680px) {
+  .hotel-calendar {
+    --calendar-day-size: 40px;
+    --calendar-column-gap: 0px;
+    width: min(343px, calc(100vw - 32px));
+  }
+
+  .hotel-calendar[data-mode='single'] {
+    width: min(343px, calc(100vw - 32px));
+  }
+
+  .hotel-calendar .calendar-body {
+    display: block;
+  }
+
+  .hotel-calendar .calendar-header,
+  .hotel-calendar .calendar-header button,
+  .hotel-calendar .calendar-nav-spacer {
+    height: 32px;
+    min-height: 32px;
+  }
+
+  .hotel-calendar .calendar-header button,
+  .hotel-calendar .calendar-nav-spacer {
+    flex-basis: 32px;
+    width: 32px;
+    min-width: 32px;
+  }
+
+  .hotel-calendar .calendar-weekdays,
+  .hotel-calendar .calendar-grid {
+    grid-template-columns: repeat(7, minmax(0, 1fr));
+  }
+
+  .hotel-calendar .calendar-cell {
+    width: 100%;
+  }
+
+  .hotel-calendar .calendar-day {
+    border-radius: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hotel-calendar button {
+    transition: none;
+  }
+}
+
+.hotel-calendar:not([hidden]) { animation: calendar-appear 160ms ease-out; }
+@keyframes calendar-appear { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .hotel-calendar:not([hidden]) { animation: none; } }

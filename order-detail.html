@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><link rel="icon" href="assets/favicon.svg?v=4" type="image/svg+xml">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>订单详情 · 酒店预订</title>
+  <link rel="stylesheet" href="css/base.css"><link rel="stylesheet" href="css/orders.css">
+  <script type="module" src="js/common.js"></script><script type="module" src="js/orders.js"></script>
+</head>
+<body class="detail-page">
+  <aside class="site-sidebar" data-sidebar="orders"></aside>
+  <main class="orders-main">
+    <nav class="orders-topnav" aria-label="账户管理"><a href="orders.html">订单管理</a><button type="button" data-account-panel="bill">账单管理</button><button type="button" data-account-panel="finance">财务管理</button></nav>
+    <nav class="detail-breadcrumb" aria-label="面包屑"><a class="detail-back-icon" href="orders.html" aria-label="返回订单列表"><img src="assets/orders/d8167.svg" alt=""></a><a href="orders.html">订单管理</a><span> &gt; </span><span data-detail="id">H2026011132432423</span></nav>
+    <div class="detail-content">
+      <div class="detail-layout">
+        <div class="detail-primary">
+          <article class="detail-panel">
+            <section class="detail-status-area" aria-label="订单状态与操作">
+              <h1 id="detail-status">订单已确认</h1>
+              <div class="detail-actions">
+                <button type="button" class="orders-button" data-detail-action="confirmation"><img src="assets/orders/8fe7b.svg" alt="">确认单</button>
+                <button type="button" class="orders-button" data-detail-action="itinerary"><img src="assets/orders/70c80.svg" alt="">行程单</button>
+                <button type="button" class="orders-button orders-button-plain" data-detail-action="modify"><img src="assets/orders/9cf88.svg" alt="">申请修改订单</button>
+                <button type="button" class="orders-button orders-button-plain" data-detail-action="cancel"><img src="assets/orders/8b05c.svg" alt="">申请取消订单</button>
+                <a class="orders-button orders-button-plain" href="rooms.html"><img src="assets/orders/9cf88.svg" alt="">再次预订</a>
+              </div>
+              <ol class="detail-timeline" id="detail-timeline"><li><span>✓</span><p>2026-10-2216:45:50订单号H2100000144268581申请修改，操作人:[直连]】国家电网</p></li><li><span>✓</span><p>2026-10-2216:45:50订单号H2100000144268581已提交成功，预订人:[直连]】国家电网</p></li></ol>
+            </section>
+            <section class="detail-ticket" aria-label="入住信息">
+              <div class="detail-hotel"><img class="detail-hotel-photo" src="assets/orders/69c30.png" alt="深圳喜马拉雅酒店"><div class="detail-hotel-heading"><div><h2 data-detail="hotel">深圳喜马拉雅酒店</h2><p data-detail="room">静岚套房 - 无早</p></div><div class="detail-hotel-contact"><button type="button" data-detail-action="contact"><img src="assets/orders/0056a.svg" alt="">联系酒店</button><img class="detail-contact-divider" src="assets/orders/a2c05.svg" alt=""><button type="button" data-detail-action="location"><img src="assets/orders/8bcd0.svg" alt="">导航到店</button></div></div></div>
+              <div class="detail-stay"><div><span>入住</span><strong data-detail="checkin">2026年10月21日</strong><span data-detail="checkinWeek">周三</span></div><div class="detail-nights"><img src="assets/orders/d8167.svg" alt="至"><p><span data-detail="nights">1</span> 晚</p></div><div><span>离店</span><strong data-detail="checkout">2026年10月22日</strong><span data-detail="checkoutWeek">周四</span></div></div>
+              <hr>
+              <div class="detail-summary"><div><img src="assets/orders/85b8d.svg" alt=""><div><span>床型名称</span><p>双床</p></div></div><div><img src="assets/orders/4d30f.svg" alt=""><div><span>客人信息</span><p data-detail="guest">李雷、韩梅梅</p></div></div></div>
+              <hr>
+              <dl class="detail-rows"><div><dt>到店时间</dt><dd>14:00 -- 17:00</dd></div><div><dt>贵司单号</dt><dd>HF2610221645493745591323390</dd></div><div><dt>确认方式</dt><dd>在线确认</dd></div></dl>
+              <hr>
+              <section class="detail-preferences" aria-labelledby="detail-preferences-title"><h3 id="detail-preferences-title">特殊要求</h3><p>以下偏好均未选择</p><div class="detail-preference-grid"><label><input type="checkbox" disabled>尽量安排大床</label><label><input type="checkbox" disabled>安静房</label><label><input type="checkbox" disabled>高楼层</label><label><input type="checkbox" disabled>相邻</label><label><input type="checkbox" disabled>双床</label><label><input type="checkbox" disabled>无烟房</label></div></section>
+              <hr>
+              <div class="detail-note"><span>备注</span><p data-detail="note">未填写</p></div>
+              <hr>
+              <dl class="detail-metadata"><div><dt>订单号</dt><dd data-detail="id">H2026011132432423</dd></div><div><dt>支付状态</dt><dd data-detail="payment">—</dd></div><div><dt>预订人</dt><dd data-detail="booker">国网测试账号</dd></div></dl>
+            </section>
+            <section class="detail-payment"><div class="detail-section-heading"><h2>支付凭证</h2><p>如你已线下转账，可在此处上传支付凭证。</p></div><div class="detail-upload"><span>支付凭证</span><label class="orders-button" for="detail-proof">上传凭证</label><input type="file" id="detail-proof" accept="image/*,.pdf" hidden><p id="detail-proof-name" aria-live="polite"></p></div><div id="detail-proof-preview" hidden></div></section>
+            <hr>
+            <section class="detail-contact"><h2>联系信息</h2><dl class="detail-metadata"><div><dt>联系姓名</dt><dd data-detail="contactName">cecilia</dd></div><div><dt>联系手机</dt><dd data-detail="phone">136 1282 6850</dd></div><div><dt>邮箱地址</dt><dd class="detail-muted">未填写</dd></div></dl></section>
+            <hr>
+            <section class="detail-transactions"><h2>交易记录</h2><div class="detail-table-wrap"><table><thead><tr><th scope="col">交易流水号</th><th scope="col">金额</th><th scope="col">类型</th><th scope="col">交易方式</th><th scope="col">交易人</th><th scope="col">交易时间</th></tr></thead><tbody id="detail-transactions"><tr><td>2343543543222</td><td>CNY 845</td><td>同意修改</td><td>单结</td><td>system</td><td>2026-10-22 15:34:34</td></tr><tr><td>2343543543222</td><td>CNY 845</td><td>申请修改</td><td>单结</td><td>system</td><td>2026-10-22 15:34:34</td></tr><tr><td>2343543543222</td><td>CNY 845</td><td>订单支付</td><td>单结</td><td>system</td><td>2026-10-22 15:34:34</td></tr></tbody></table></div></section>
+          </article>
+          <div class="detail-bottom-actions"><a href="orders.html" class="orders-button"><img class="detail-arrow-back" src="assets/orders/d8167.svg" alt="">返回订单列表</a><button type="button" class="orders-button" data-detail-action="print"><img src="assets/orders/d3909.svg" alt="">打印订单</button></div>
+        </div>
+        <aside class="detail-cost" aria-label="费用明细"><h2>费用明细</h2><div class="detail-cost-group"><h3>房费</h3><div><span>2026-10-28　 ·　 双早</span><span>¥ 319 × 1</span></div><div><span>2026-10-29　 ·　 双早</span><span>¥ 319 × 1</span></div><div class="detail-subtotal"><span>小计</span><strong>¥ 738.00</strong></div></div><hr><div class="detail-cost-group"><h3>其它</h3><div><span>服务费</span><span>¥ 31.9</span></div><div><span>XXX费</span><span>¥ 31.9</span></div><div class="detail-subtotal"><span>小计</span><strong>¥ 73.80</strong></div></div><hr><div class="detail-cost-total"><span>总计（含税价）</span><strong data-detail="total">¥ 1,476</strong></div></aside>
+      </div>
+    </div>
+  </main>
+  <dialog class="orders-dialog" id="orders-dialog" aria-labelledby="orders-dialog-title"><form method="dialog" class="orders-dialog-heading"><h2 id="orders-dialog-title"></h2><button type="submit" aria-label="关闭弹窗">×</button></form><div id="orders-dialog-content"></div></dialog>
+</body>
+</html>

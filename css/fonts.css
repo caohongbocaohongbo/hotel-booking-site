@@ -1,0 +1,24 @@
+/* 本地开源字体；原始字体与 OFL 许可证随项目分发，无外部字体请求。 */
+@font-face {
+  font-family: 'Inter';
+  src: url('../assets/fonts/Inter-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Noto Sans SC';
+  src: url('../assets/fonts/NotoSansSC-Variable.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Intel One Mono';
+  src: url('../assets/fonts/IntelOneMono-Variable.ttf') format('truetype');
+  font-weight: 300 700;
+  font-style: normal;
+  font-display: swap;
+}
