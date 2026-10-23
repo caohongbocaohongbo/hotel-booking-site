@@ -7,3 +7,16 @@
 
 @media(max-width:767px){.home-layout{padding-top:calc(84px + env(safe-area-inset-top))}}
 .home-hero:after{background:rgba(23,26,28,.3)}
+
+/* 桌面端按右侧剩余空间分配房型卡片高度；较矮的窗口保留页面滚动。 */
+@media (min-width:768px){
+  .home-layout{height:100dvh;min-height:720px;grid-template-rows:minmax(0,1fr);padding-top:clamp(48px,8.52dvh,92px);padding-bottom:clamp(48px,8.52dvh,92px)}
+  .home-hero,.home-booking{height:auto;min-height:0}
+  .home-room-strip{height:auto;min-height:270px;max-height:620px;flex:4 1 270px}
+  .home-card{height:100%}
+  .home-card-copy,.home-card:nth-child(2) .home-card-copy,.home-card:nth-child(3) .home-card-copy{top:auto;bottom:0;height:auto}
+}
+@media (min-width:768px) and (max-height:900px){
+  .home-welcome{height:clamp(112px,19dvh,146px)}
+  .home-room-tools{height:50px}
+}
